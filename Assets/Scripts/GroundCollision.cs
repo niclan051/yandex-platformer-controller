@@ -1,14 +1,18 @@
 using UnityEngine;
 
-public class GroundCollision : MonoBehaviour {
-    public bool OnGround { get; set; }
+public class GroundCollision : MonoBehaviour
+{
+    private Collider2D _collider;
+    [SerializeField] private LayerMask groundLayer;
     
-    private void OnTriggerStay2D(Collider2D other)
+    public bool OnGround { get; private set; }
+
+    private void Start()
     {
-        OnGround = true;
+        _collider = GetComponent<Collider2D>();
     }
-    private void OnTriggerExit2D(Collider2D other)
+    private void Update()
     {
-        OnGround = false;
+        OnGround = _collider.IsTouchingLayers(groundLayer);
     }
 }

@@ -9,18 +9,20 @@ public class PlayerMove : MonoBehaviour
     private Vector2 moveVector;
     public int speed = 2;
     public Animator anim;
-    public SpriteRenderer sr;
     public bool faceright = true;
     public int ImpulseLunge = 5000;
     private bool lockLunge = false;
     public int fastspeed = 6;
     private int realSpeed;
     private bool speedlock;
+
+    private GroundCollision _groundCollision;
+    
     void Start()
     {
+        _groundCollision = GetComponentInChildren<GroundCollision>();
+        
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
         realSpeed = speed;
     }
 
@@ -66,7 +68,7 @@ public class PlayerMove : MonoBehaviour
     void Run()
     {
 
-        if (Input.GetKey(KeyCode.LeftShift) && Jump.onGround)
+        if (Input.GetKey(KeyCode.LeftShift) && _groundCollision.OnGround)
         {
             realSpeed = fastspeed;
             if (Input.GetKeyDown(KeyCode.Space)) { speedlock = true; }
@@ -75,7 +77,7 @@ public class PlayerMove : MonoBehaviour
         else
         {
             if (!speedlock) { realSpeed = speed; }
-            else if (speedlock && Jump.onGround) { speedlock = false; }
+            else if (speedlock && _groundCollision.OnGround) { speedlock = false; }
             else { realSpeed = fastspeed;  }
         }
     }
