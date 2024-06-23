@@ -15,11 +15,13 @@ public class Jump : MonoBehaviour
     public int maxJumpValue = 2;
     void Start()
     {
-       
+        WallcheckRadiusUp = ChekingWallUp.GetComponent<CircleCollider2D>().radius;
+        WallcheckRadiusDown = ChekingWallDown.GetComponent<CircleCollider2D>().radius;
     }
 
     void Update()
     {
+        CheckingWall();
         CheckingGround();
         Jump1();
     }
@@ -56,6 +58,18 @@ public class Jump : MonoBehaviour
     void IgnoreLayerOff()
     {
         Physics2D.IgnoreLayerCollision(8, 9, false);
+    }
+
+    public bool onWall;
+    public Transform ChekingWallUp;
+    public Transform ChekingWallDown;
+    public float WallcheckRadiusUp;
+    public float WallcheckRadiusDown;
+    public LayerMask Wall;
+
+    void CheckingWall()
+    {
+        onWall= (Physics2D.OverlapCircle(ChekingWallUp.position, WallcheckRadiusUp, Wall) && Physics2D.OverlapCircle(ChekingWallDown.position, WallcheckRadiusDown, Wall));
     }
 }
 
