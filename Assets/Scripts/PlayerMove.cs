@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     public Animator anim;
     public SpriteRenderer sr;
     public bool faceright = true;
+    public int ImpulseLunge = 5000;
+    private bool lockLunge = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     {
         Walk();
         Reflect();
+        Lunge();
     }
     void Walk()
     {
@@ -37,6 +40,22 @@ public class PlayerMove : MonoBehaviour
             transform.localScale *= new Vector2(-1, 1);
             faceright = !faceright;
         }
+    }
+    void Lunge()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !lockLunge)
+        {
+            lockLunge = true;
+            Invoke("LungeLock", 1f);
+            rb.velocity = new Vector2(0, 0);
+
+            if (!faceright) { rb.AddForce(Vector2.left * ImpulseLunge); }
+            else { rb.AddForce(Vector2.right * ImpulseLunge); }
+        }
+    }
+    void LungeLock()
+    {
+        lockLunge = false;
     }
 }
 

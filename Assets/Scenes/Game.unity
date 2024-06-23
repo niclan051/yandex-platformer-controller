@@ -755,7 +755,6 @@ GameObject:
   - component: {fileID: 1268506993}
   - component: {fileID: 1268506992}
   - component: {fileID: 1268506994}
-  - component: {fileID: 1268506997}
   - component: {fileID: 1268507001}
   - component: {fileID: 1268507002}
   - component: {fileID: 1268507004}
@@ -863,21 +862,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1268506997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268506991}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c08e1fa5352b4f84b00fba5365d3e932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashSeconds: 0.25
-  dashForce: 25
-  maxDashCount: 1
 --- !u!114 &1268507001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +897,7 @@ MonoBehaviour:
   anim: {fileID: 1268507004}
   sr: {fileID: 0}
   faceright: 1
+  ImpulseLunge: 5000
 --- !u!95 &1268507004
 Animator:
   serializedVersion: 5
@@ -953,7 +938,7 @@ MonoBehaviour:
   checkRadius: 0.5
   Ground:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
   anim: {fileID: 1268507004}
   maxJumpValue: 2
 --- !u!61 &1268507006
@@ -3154,7 +3139,7 @@ PlatformEffector2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431566884}
   m_Enabled: 1
-  m_UseColliderMask: 1
+  m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
