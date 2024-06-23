@@ -11,28 +11,40 @@ public class Jump : MonoBehaviour
     public float checkRadius = 0.5f;
     public LayerMask Ground;
     public Animator anim;
+    private int jumpCount = 0;
+    public int maxJumpValue = 2;
     void Start()
     {
-        
+       
     }
-
 
     void Update()
     {
-        Jump1();
         CheckingGround();
+        Jump1();
     }
 
-    void Jump1()
-    {
-        if(Input.GetKeyDown(KeyCode.Space) && onGround)
-        {
-            rb.AddForce(Vector2.up * JumpForce);
-        }
-    }
     void CheckingGround()
     {
         onGround = Physics2D.OverlapCircle(GroundCheck.position, checkRadius, Ground);
-        anim.SetBool("OnGround", onGround);
+        anim.SetBool("onGround", onGround);
+    }
+    void Jump1()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(onGround)
+            {
+                rb.AddForce(Vector2.up * JumpForce);
+            }
+            else if (++jumpCount < maxJumpValue)
+            {
+                rb.AddForce(Vector2.up * JumpForce);
+            }
+        }
+
+        if (onGround) { jumpCount = 0; }
     }
 }
+
+
