@@ -7,30 +7,36 @@ public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D rb;
     private Vector2 moveVector;
-    public float speed = 2f;
+    public int speed = 2;
     public Animator anim;
     public SpriteRenderer sr;
     public bool faceright = true;
     public int ImpulseLunge = 5000;
     private bool lockLunge = false;
+    public int fastspeed = 6;
+    private int realSpeed;
+    private bool speedlock;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();    
+        sr = GetComponent<SpriteRenderer>();
+        realSpeed = speed;
     }
 
 
+    
     void Update()
     {
         Walk();
         Reflect();
+        Run();
         Lunge();
     }
     void Walk()
     {
         moveVector.x = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
+        rb.velocity = new Vector2(moveVector.x * realSpeed, rb.velocity.y);
         anim.SetFloat("MoveX", Mathf.Abs(moveVector.x));
     }
     void Reflect()
@@ -57,5 +63,25 @@ public class PlayerMove : MonoBehaviour
     {
         lockLunge = false;
     }
+    void Run()
+    {
+
+        if (Input.GetKey(KeyCode.LeftShift) && Jump.onGround)
+        {
+            realSpeed = fastspeed;
+            if (Input.GetKeyDown(KeyCode.Space)) { speedlock = true; }
+        
+        }
+        else
+        {
+            if (!speedlock) { realSpeed = speed; }
+            else if (speedlock && Jump.onGround) { speedlock = false; }
+            else { realSpeed = fastspeed;  }
+        }
+    }
+
+
+
+
 }
 

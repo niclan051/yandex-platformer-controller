@@ -6,7 +6,7 @@ public class Jump : MonoBehaviour
 {
     public float JumpForce = 0f;
     public Rigidbody2D rb;
-    public bool onGround;
+    public static bool onGround;
     public Transform GroundCheck;
     public float checkRadius = 0.5f;
     public LayerMask Ground;
