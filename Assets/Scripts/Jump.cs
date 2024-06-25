@@ -16,8 +16,6 @@ public class Jump : MonoBehaviour
     {
         _groundCollision = GetComponentInChildren<GroundCollision>();
         
-        WallcheckRadiusUp = ChekingWallUp.GetComponent<CircleCollider2D>().radius;
-        WallcheckRadiusDown = ChekingWallDown.GetComponent<CircleCollider2D>().radius;
     }
 
     void Update()
