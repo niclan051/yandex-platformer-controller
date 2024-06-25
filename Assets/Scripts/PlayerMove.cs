@@ -56,7 +56,8 @@ public class PlayerMove : MonoBehaviour
             lockLunge = true;
             Invoke("LungeLock", 1f);
             rb.velocity = new Vector2(0, 0);
-
+            anim.StopPlayback();
+            anim.Play("Dash");
             if (!faceright) { rb.AddForce(Vector2.left * ImpulseLunge); }
             else { rb.AddForce(Vector2.right * ImpulseLunge); }
         }
