@@ -78,6 +78,7 @@ public class PlayerMove : MonoBehaviour
         {
             realSpeed = fastspeed;
             if (Input.GetKeyDown(KeyCode.Space)) { speedlock = true; }
+            anim.SetBool("Run", true);
         
         }
         else
@@ -85,6 +86,7 @@ public class PlayerMove : MonoBehaviour
             if (!speedlock) { realSpeed = speed; }
             else if (speedlock && _groundCollision.OnGround) { speedlock = false; }
             else { realSpeed = fastspeed;  }
+            anim.SetBool("Run", false);
         }
     }
 

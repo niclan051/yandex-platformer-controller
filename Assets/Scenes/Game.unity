@@ -517,7 +517,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 15
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   anim: {fileID: 1268507004}
   faceright: 1
   ImpulseLunge: 5000
-  fastspeed: 7
+  fastspeed: 9
 --- !u!95 &1268507004
 Animator:
   serializedVersion: 5
