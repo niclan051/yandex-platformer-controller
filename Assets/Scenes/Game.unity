@@ -517,7 +517,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 15
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -654,7 +654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.458851, y: 5, z: -10}
+  m_LocalPosition: {x: 14.051931, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   anim: {fileID: 1268507004}
   faceright: 1
   ImpulseLunge: 5000
-  fastspeed: 7
+  fastspeed: 9
 --- !u!95 &1268507004
 Animator:
   serializedVersion: 5
