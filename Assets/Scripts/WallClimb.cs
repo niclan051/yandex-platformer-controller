@@ -11,7 +11,8 @@ public class WallClimb : MonoBehaviour
 
     private PlayerMove _playerMove;
     private Rigidbody2D _rb;
-
+    public Animator anim;
+    private Vector2 moveVector;
     private void Start()
     {
         _playerMove = GetComponent<PlayerMove>();
@@ -21,7 +22,9 @@ public class WallClimb : MonoBehaviour
     private void Update()
     {
         OnWall = wallCheck.IsTouchingLayers(wallLayer) && Input.GetKey(KeyCode.LeftShift);
-
+        anim.SetBool("OnWall", OnWall);
+        anim.SetFloat("UpDown", moveVector.y);
+        moveVector.y = Input.GetAxisRaw("Vertical");
         WallJump();
         if (OnWall)
         {

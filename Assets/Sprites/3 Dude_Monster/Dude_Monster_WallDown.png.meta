@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 85d2461fbf6291146a534f118f6b21ec
+guid: 6dd9b8d77920df3419c3c50f88feb774
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -108,7 +108,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Dude_Monster_WallDown_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 22
+        height: 27
+      alignment: 9
+      pivot: {x: 0.6426024, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9747be1643c207d4ab5bdb5b8bd3e7e8
+      internalID: -39631869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dude_Monster_WallDown_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 22
+        height: 27
+      alignment: 9
+      pivot: {x: 0.6426024, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b56fe3accf23142b522dba48342124
+      internalID: 1278847056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dude_Monster_WallDown_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 22
+        height: 27
+      alignment: 9
+      pivot: {x: 0.6426024, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54270e815a211fb43881fbab6411b887
+      internalID: -1042633939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dude_Monster_WallDown_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 22
+        height: 27
+      alignment: 9
+      pivot: {x: 0.6426024, y: 0.49354473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39944ab32f060764ea601f9464c1b43c
+      internalID: 1566010725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dude_Monster_WallDown_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 22
+        height: 27
+      alignment: 9
+      pivot: {x: 0.6426024, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b12ce40ec32f84aa1cdbe9fd729470
+      internalID: -1101695858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +224,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dude_Monster_WallDown_0: -39631869
+      Dude_Monster_WallDown_1: 1278847056
+      Dude_Monster_WallDown_2: -1042633939
+      Dude_Monster_WallDown_3: 1566010725
+      Dude_Monster_WallDown_4: -1101695858
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
