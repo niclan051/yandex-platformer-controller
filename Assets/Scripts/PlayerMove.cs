@@ -17,10 +17,12 @@ public class PlayerMove : MonoBehaviour
     private bool speedlock;
 
     private GroundCollision _groundCollision;
+    private WallClimb _wallClimb;
     
     void Start()
     {
         _groundCollision = GetComponentInChildren<GroundCollision>();
+        _wallClimb = GetComponent<WallClimb>();
         
         rb = GetComponent<Rigidbody2D>();
         realSpeed = speed;
@@ -30,10 +32,13 @@ public class PlayerMove : MonoBehaviour
     
     void Update()
     {
-        Walk();
-        Reflect();
-        Run();
-        Lunge();
+        if (!_wallClimb.OnWall)
+        {
+            Walk();
+            Reflect();
+            Run();
+            Lunge();
+        }
     }
     void Walk()
     {
