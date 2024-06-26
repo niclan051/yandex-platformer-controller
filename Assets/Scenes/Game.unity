@@ -654,7 +654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.779919, y: 5, z: -10}
+  m_LocalPosition: {x: 13.894163, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1406,12 +1406,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b382abc815f4e1187c70198484d9dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 10
+  speedMultiplier: 5
   wallJumpForce: 500
   wallCheck: {fileID: 1559238625}
   wallLayer:
     serializedVersion: 2
     m_Bits: 8
+  anim: {fileID: 1268507004}
 --- !u!1 &1314399576
 GameObject:
   m_ObjectHideFlags: 0
